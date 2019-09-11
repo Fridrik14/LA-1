@@ -12,6 +12,7 @@ namespace technicalRadiation.WebApi.Controllers
     public class TRController : ControllerBase
     {
         private NewsItemService _newsItemService = new NewsItemService();
+        private CategoryService _categoryService = new CategoryService();
 
         // [FromQuery] type name
         // http/{s}://localhost:5000/{1}/api
@@ -59,14 +60,14 @@ namespace technicalRadiation.WebApi.Controllers
         [HttpGet]
         public IActionResult getAllCategories()
         {
-            return Ok();
+            return Ok(_categoryService.getAllCategories());
         }
 
         [Route("/categories/{categoryId:int}")]
         [HttpGet]
         public IActionResult getCategoryById(int categoryId)
         {
-            return Ok();
+            return Ok(_categoryService.getCategoryById(categoryId));
         }
 
 
