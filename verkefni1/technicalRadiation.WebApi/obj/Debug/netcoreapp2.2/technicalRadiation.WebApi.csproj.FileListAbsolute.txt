@@ -1,0 +1,14 @@
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\bin\Debug\netcoreapp2.2\technicalRadiation.WebApi.deps.json
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\bin\Debug\netcoreapp2.2\technicalRadiation.WebApi.runtimeconfig.json
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\bin\Debug\netcoreapp2.2\technicalRadiation.WebApi.runtimeconfig.dev.json
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\bin\Debug\netcoreapp2.2\technicalRadiation.WebApi.dll
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\bin\Debug\netcoreapp2.2\technicalRadiation.WebApi.pdb
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\obj\Debug\netcoreapp2.2\technicalRadiation.WebApi.csprojAssemblyReference.cache
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\obj\Debug\netcoreapp2.2\technicalRadiation.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\obj\Debug\netcoreapp2.2\technicalRadiation.WebApi.RazorAssemblyInfo.cache
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\obj\Debug\netcoreapp2.2\technicalRadiation.WebApi.RazorAssemblyInfo.cs
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\obj\Debug\netcoreapp2.2\technicalRadiation.WebApi.AssemblyInfoInputs.cache
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\obj\Debug\netcoreapp2.2\technicalRadiation.WebApi.AssemblyInfo.cs
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\obj\Debug\netcoreapp2.2\technicalRadiation.WebApi.RazorTargetAssemblyInfo.cache
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\obj\Debug\netcoreapp2.2\technicalRadiation.WebApi.dll
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\verkefni1\technicalRadiation.WebApi\obj\Debug\netcoreapp2.2\technicalRadiation.WebApi.pdb
