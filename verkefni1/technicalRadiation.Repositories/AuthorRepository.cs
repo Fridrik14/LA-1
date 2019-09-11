@@ -33,6 +33,16 @@ namespace technicalRadiation.Repositories
             };
         }
 
+        // WORKING PROGRESS
+        public NewsItemDto getNewsItemsByAuthorId(int AuthorId)
+        {
+            var results = DataProvider.NIA.FindAll(r => r.AuthorId == AuthorId);
+            var newsItems = DataProvider.NewsItems;
+            
+            
+            return null;
+        }
+
         public void UpdateAuthorById(AuthorInputModel author, int id)
         {
 

@@ -35,6 +35,6 @@ namespace technicalRadiation.Repositories
                 ImgSource = result.ImgSource,
                 ShortDescription = result.ShortDescription
             };
-        } 
+        }
     }
 }
