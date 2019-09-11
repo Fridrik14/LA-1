@@ -80,5 +80,25 @@ namespace technicalRadiation.WebApi.Controllers
         {
             return Ok();
         }
+
+        [Route("/authors")]
+        [HttpGet]
+        public IActionResult getAllAuthors() 
+        { 
+            return Ok();
+        }
+
+        [Route("/authors/{authorId:int}")]
+        [HttpGet]
+        public IActionResult getAuthorById(int authorId)
+        {
+            return Ok();
+        }
+
+        [Route("/authors/{authorId:int}/newsItems")]
+        public IActionResult getNewsItemsOfAuthor(int authorId) 
+        { 
+            return Ok(); 
+        }
     }
 }
