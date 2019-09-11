@@ -18,5 +18,23 @@ namespace techincalRadiation.Repositories
                 ShortDescription = r.ShortDescription
             });
         }
+
+        public NewsItemDto GetNewsItemById(int newsId)
+        {
+            var result = DataProvider.NewsItems.FirstOrDefault(r => r.Id == newsId);
+
+            //TODO: Gera villumeldingu fyrir rangt Id
+            if(result == null) 
+            {
+                return null;
+            }
+            return new NewsItemDto
+            {
+                Id = result.Id,
+                Title = result.Title,
+                ImgSource = result.ImgSource,
+                ShortDescription = result.ShortDescription
+            };
+        } 
     }
 }

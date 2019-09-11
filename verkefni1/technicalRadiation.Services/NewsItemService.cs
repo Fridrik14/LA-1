@@ -12,5 +12,10 @@ namespace technicalRadiation.Service
         {
             return _newsItemRepository.getAllNewsItems();
         }
+
+        public NewsItemDto getNewsItemById(int id)
+        {
+            return _newsItemRepository.getNewsItemById(id);
+        }
     }
 }

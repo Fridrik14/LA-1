@@ -25,15 +25,15 @@ namespace technicalRadiation.WebApi.Controllers
         // http/{s}://localhost:5000/{1}/api/1
         [Route("/{newsitemid:int}")]
         [HttpGet]
-        public IActionResult getNewsItemById(int newsitemid)
+        public IActionResult getNewsItemById(int newsItemId)
         {
-            return Ok();
+            return Ok(_newsItemService.getNewsItemById(newsItemId));
         }
 
         // http/{s}://localhost:5000/{1}/api/1
         [Route("{newsitemid:int}")]
         [HttpPut]
-        public IActionResult updateNewsItemById(int newsitemid)
+        public IActionResult updateNewsItemById(int newsItemId)
         {
             return Ok();
         }
@@ -42,7 +42,7 @@ namespace technicalRadiation.WebApi.Controllers
         // Required?
         [Route("{newsitemid:int}")]
         [HttpPatch]
-        public IActionResult updateNewsItemPartiallyById(int newsitemid)
+        public IActionResult updateNewsItemPartiallyById(int newsItemId)
         {
             return Ok();
         }
@@ -50,7 +50,7 @@ namespace technicalRadiation.WebApi.Controllers
         // http/{s}://localhost:5000/{1}/api/1
         [Route("{newsitemid:int}")]
         [HttpDelete]
-        public IActionResult deleteNewsItemById(int newsitemid)
+        public IActionResult deleteNewsItemById(int newsItemId)
         {
             return Ok();
         }
