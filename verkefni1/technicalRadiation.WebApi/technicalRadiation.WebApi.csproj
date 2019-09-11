@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\technicalRadiation.Models\technicalRadiation.Models.csproj" />
     <ProjectReference Include="..\technicalRadiation.Repositories\technicalRadiation.Repositories.csproj" />
+    <ProjectReference Include="..\technicalRadiation.Services\technicalRadiation.Services.csproj" />
   </ItemGroup>
 
 </Project>

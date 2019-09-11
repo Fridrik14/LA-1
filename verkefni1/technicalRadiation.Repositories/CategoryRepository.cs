@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using techincalRadiation.Models.Dtos;
@@ -5,19 +6,22 @@ using techincalRadiation.Repositories.Data;
 
 namespace technicalRadiation.Repositories
 {
+    
     public class CategoryRepository
     {
+       
         public IEnumerable<CategoryDto> getAllCategories()
         {
-            return DataProvider.Categories.Select(r => new CategoryDto
+            return DataProvider.Categories.Select(
+                r => new CategoryDto
             {
-                r.Id = Id,
-                r.Name = Name,
-                r.Slug = Slug
+                Id = r.Id,
+                Name = r.Name,
+                Slug = r.Slug
             });
         }
         
-        public CategoryDto getCategoryById(int categoryId)
+        public CategoryDetailDto getCategoryById(int categoryId)
         {
             var result = DataProvider.Categories.FirstOrDefault(r => r.Id == categoryId);
             //TODO throw exception
@@ -25,12 +29,12 @@ namespace technicalRadiation.Repositories
             {
                 return null;
             }
-
-            return new CategoryDto 
+            // ADD count of how many news items this category is assigned
+            return new CategoryDetailDto 
             {
-                result.Id = Id,
-                result.Name = Name,
-                result.Slug = Slug
+                Id = result.Id,
+                Name = result.Name,
+                Slug = result.Slug
             };
         }
     }

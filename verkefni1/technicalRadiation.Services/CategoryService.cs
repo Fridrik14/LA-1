@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using technicalRadiation.Repositories;
-using technicalRadiation.Models.Dtos;
+using techincalRadiation.Models.Dtos;
 
 namespace technicalRadiation.Service
 {
@@ -12,7 +12,7 @@ namespace technicalRadiation.Service
         {
             return _categoryRepository.getAllCategories();
         }
-        public CategoryDto getCategoryById(int id)
+        public CategoryDetailDto getCategoryById(int id)
         {
             return _categoryRepository.getCategoryById(id);
         }

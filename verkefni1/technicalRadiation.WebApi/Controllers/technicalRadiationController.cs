@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using techincalRadiation.Models.Dtos;
 using technicalRadiation.Service;
+using TechnicalRadiation.Models;
 
 namespace technicalRadiation.WebApi.Controllers
 {
@@ -19,9 +21,11 @@ namespace technicalRadiation.WebApi.Controllers
         // http/{s}://localhost:5000/{1}/api
         [Route("")]
         [HttpGet]
-        public IActionResult getAllNewsItems()
+        public IActionResult getAllNewsItems([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 25)
         {
-            return Ok(_newsItemService.getAllNewsItems());
+            var newsItems = _newsItemService.getAllNewsItems();
+            var envelope = new Envelope<NewsItemDto>(pageSize, pageNumber, newsItems);
+            return Ok(envelope);
         }
 
         // http/{s}://localhost:5000/{1}/api/1
@@ -59,9 +63,12 @@ namespace technicalRadiation.WebApi.Controllers
 
         [Route("/categories")]
         [HttpGet]
-        public IActionResult getAllCategories()
-        {
-            return Ok(_categoryService.getAllCategories());
+        // Should work, but does this confine to the 3 layered system?
+        public IActionResult getAllCategories([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 25)
+        {   
+            var categories = _categoryService.getAllCategories();
+            var envelope = new Envelope<CategoryDto>(pageSize, pageNumber, categories);
+            return Ok(envelope);
         }
 
         [Route("/categories/{categoryId:int}")]
@@ -88,9 +95,11 @@ namespace technicalRadiation.WebApi.Controllers
 
         [Route("/authors")]
         [HttpGet]
-        public IActionResult getAllAuthors() 
-        { 
-            return Ok(_authorService.getAllAuthors());
+        public IActionResult getAllAuthors([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 25) 
+        {
+            var authors = _authorService.getAllAuthors();
+            var envelope = new Envelope<AuthorDto>(pageSize, pageNumber, authors); 
+            return Ok(authors);
         }
 
         [Route("/authors/{authorId:int}")]

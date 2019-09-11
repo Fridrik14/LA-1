@@ -3,7 +3,7 @@ using System.Linq;
 using techincalRadiation.Models.Dtos;
 using techincalRadiation.Repositories.Data;
 
-namespace techincalRadiation.Repositories
+namespace technicalRadiation.Repositories
 {
     // Working progress
     public class NewsItemRepository

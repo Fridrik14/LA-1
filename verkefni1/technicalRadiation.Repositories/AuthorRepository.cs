@@ -11,12 +11,12 @@ namespace technicalRadiation.Repositories
         {
             return DataProvider.Authors.Select(r => new AuthorDto 
             {
-                r.Id = Id,
-                r.Name = Name
+                Id = r.Id,
+                Name = r.Name
             });
         }
 
-        public AuthorDto getAuthorById(int authorId)
+        public AuthorDetailDto getAuthorById(int authorId)
         {
             var result = DataProvider.Authors.FirstOrDefault(r => r.Id == authorId);
             //TODO throw exception
@@ -24,11 +24,18 @@ namespace technicalRadiation.Repositories
             {
                 return null;
             }
-            return new AuthorDto
+            return new AuthorDetailDto
             {
-                result.Id = Id,
-                result.Name = Name
+                Id = result.Id ,
+                Name = result.Name,
+                ProfileImgSource = result.ProfileImgSource,
+                Bio = result.Bio
             };
+        }
+
+        public void UpdateAuthorById(AuthorInputModel author, int id)
+        {
+
         }
     }
 }

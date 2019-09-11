@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using techincalRadiation.Models.Dtos;
 using technicalRadiation.Repositories;
-using technicalRadiation.Models.Dtos;
+
 
 namespace technicalRadiation.Service
 {
@@ -13,7 +14,7 @@ namespace technicalRadiation.Service
             return _authorRepository.getAllAuthors();
         }
 
-        public AuthorDto getAuthorById(int id)
+        public AuthorDetailDto getAuthorById(int id)
         {
             return _authorRepository.getAuthorById(id);
         }

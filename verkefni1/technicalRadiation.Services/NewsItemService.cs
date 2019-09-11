@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using technicalRadiation.Repositories;
-using technicalRadiation.Models.Dtos;
+using techincalRadiation.Models.Dtos;
 
 namespace technicalRadiation.Service
 {
@@ -10,12 +10,12 @@ namespace technicalRadiation.Service
 
         public IEnumerable<NewsItemDto> getAllNewsItems()
         {
-            return _newsItemRepository.getAllNewsItems();
+            return _newsItemRepository.GetAllNewsItems();
         }
 
         public NewsItemDto getNewsItemById(int id)
         {
-            return _newsItemRepository.getNewsItemById(id);
+            return _newsItemRepository.GetNewsItemById(id);
         }
     }
 }
