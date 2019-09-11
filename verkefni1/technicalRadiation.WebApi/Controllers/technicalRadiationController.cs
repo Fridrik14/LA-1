@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using technicalRadiation.Service;
 
 namespace technicalRadiation.WebApi.Controllers
 {
@@ -10,13 +11,15 @@ namespace technicalRadiation.WebApi.Controllers
     [ApiController]
     public class TRController : ControllerBase
     {
+        private NewsItemService _newsItemService = new NewsItemService();
+
         // [FromQuery] type name
         // http/{s}://localhost:5000/{1}/api
         [Route("")]
         [HttpGet]
         public IActionResult getAllNewsItems()
         {
-            return Ok();
+            return Ok(_newsItemService.getAllNewsItems());
         }
 
         // http/{s}://localhost:5000/{1}/api/1
