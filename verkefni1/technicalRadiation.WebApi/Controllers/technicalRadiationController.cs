@@ -13,6 +13,7 @@ namespace technicalRadiation.WebApi.Controllers
     {
         private NewsItemService _newsItemService = new NewsItemService();
         private CategoryService _categoryService = new CategoryService();
+        private AuthorService _authorService = new AuthorService();
 
         // [FromQuery] type name
         // http/{s}://localhost:5000/{1}/api
@@ -89,14 +90,14 @@ namespace technicalRadiation.WebApi.Controllers
         [HttpGet]
         public IActionResult getAllAuthors() 
         { 
-            return Ok();
+            return Ok(_authorService.getAllAuthors());
         }
 
         [Route("/authors/{authorId:int}")]
         [HttpGet]
         public IActionResult getAuthorById(int authorId)
         {
-            return Ok();
+            return Ok(_authorService.getAuthorById(authorId));
         }
 
         [Route("/authors/{authorId:int}/newsItems")]
