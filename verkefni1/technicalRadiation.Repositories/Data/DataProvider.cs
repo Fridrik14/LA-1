@@ -23,7 +23,7 @@ namespace techincalRadiation.Repositories.Data
                 DateCreated = DateTime.Now,
                 DateModified = DateTime.Now,
                 ModifiedBy = _adminName
-            }
+            },
             new Author
             {
                 Id = 2,
@@ -46,7 +46,7 @@ namespace techincalRadiation.Repositories.Data
                 DateCreated = DateTime.Now,
                 DateModified = DateTime.Now,
                 ModifiedBy = _adminName
-            }
+            },
             new Category
             {
                 Id = 2,
@@ -70,7 +70,7 @@ namespace techincalRadiation.Repositories.Data
                 PublishDate = "1.3.1988",
                 DateCreated = DateTime.Now,
                 DateModified = DateTime.Now
-            }
+            },
             new NewsItem
             {
                 Id = 2,

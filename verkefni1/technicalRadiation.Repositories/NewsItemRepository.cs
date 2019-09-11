@@ -10,11 +10,12 @@ namespace techincalRadiation.Repositories
     {
         public IEnumerable<NewsItemDto> GetAllNewsItems()
         {
-            return DataProvider.NewsItems.Select(
-                r => new NewsItemDto
+            return DataProvider.NewsItems.Select(r => new NewsItemDto
             {
-                Id = 1,
-
+                Id = r.Id,
+                Title = r.Title,
+                ImgSource = r.ImgSource,
+                ShortDescription = r.ShortDescription
             });
         }
     }
