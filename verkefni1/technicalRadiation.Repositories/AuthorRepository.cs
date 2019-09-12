@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using static System.Collections.IEnumerable;
 using System.Linq;
 using techincalRadiation.Models.Dtos;
-using technicalRadiation.Models.Entities;
-using technicalRadiation.Models.InputModels;
+using techincalRadiation.Models;
+using techincalRadiation.Models.Entities;
+using techincalRadiation.Models.InputModels;
 using techincalRadiation.Repositories.Data;
 
 namespace technicalRadiation.Repositories
@@ -29,13 +31,14 @@ namespace technicalRadiation.Repositories
             }
             return new AuthorDetailDto
             {
-                Id = result.Id ,
+                Id = result.Id,
                 Name = result.Name,
                 ProfileImgSource = result.ProfileImgSource,
                 Bio = result.Bio
             };
         }
 
+        // fix
         public NewsItemDto getNewsItemsByAuthorId(int authorId)
         {
             var result = DataProvider.NIA.FindAll(r => r.AuthorId == authorId);
@@ -44,16 +47,22 @@ namespace technicalRadiation.Repositories
             {
                 return null;
             }
+            
             //Populate newsItemsId's of author
-            var newsItems = DataProvider.NewsItems.FindAll(n => n.Id == result.NewsItemId);
-            //Return newsItemDto's of all newsItems of author
-            return DataProvider.NewsItems.Select(s => new NewsItemDto
+            foreach (var item in result)
             {
-                s.Id = newsItems.Id,
-                s.Title = newsItems.Title,
-                s.ImgSource = newsItems.ImgSource,
-                s.ShortDescription = newsItems.SortDescription
-            });
+                var newsItem = DataProvider.NewsItems.FirstOrDefault(p => p.Id == item.NewsItemId);
+                return new NewsItemDto
+                {
+                    Id = newsItem.Id,
+                    Title = newsItem.Title,
+                    ImgSource = newsItem.ImgSource,
+                    ShortDescription = newsItem.ShortDescription
+                };
+
+            }
+            //Return newsItemDto's of all newsItems of author
+            
         }
 
         public void UpdateAuthorById(AuthorInputModel author, int id)
