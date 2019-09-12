@@ -88,13 +88,13 @@ namespace technicalRadiation.Repositories
         public void DeleteNewsItemAuthorConnection(int newsItemId)
         {
             // Find all connections and delete them
-            var entities = DataProvider.NIA.RemoveAll(r=> r.NewsItemId == newsItemId);
+            DataProvider.NIA.RemoveAll(r => r.NewsItemId == newsItemId);
         }
 
         public void DeleteNewsItemCategoriesConnection(int newsItemId)
         {
             // Find all connections and delete 
-            var entities = DataProvider.NIC.RemoveAll(r=> r.NewsItemId == newsItemId);
+            DataProvider.NIC.RemoveAll(r=> r.NewsItemId == newsItemId);
         }
     }
 }

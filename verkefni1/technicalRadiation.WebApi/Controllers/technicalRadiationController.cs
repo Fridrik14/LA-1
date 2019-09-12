@@ -116,9 +116,45 @@ namespace technicalRadiation.WebApi.Controllers
         }
 
         [Route("/authors/{authorId:int}/newsItems")]
+        [HttpGet]
         public IActionResult getNewsItemsOfAuthor(int authorId) 
         { 
-            return Ok(); 
+            return Ok(_authorService.getNewsItemsByAuthorId(authorId)); 
+        }
+
+        [Route("/authors")]
+        [HttpPost]
+        public IActionResult createNewAuthor([FromBody] AuthorInputModels author)
+        {
+            if (!ModelState.IsValid)
+            { 
+                return BadRequest("Model is not properly formatted."); 
+            }
+            var entity = _authorService.createNewAuthor(author);
+            return CreatedAtRoute("getAuthorById", new { id = entity.Id }, null);
+        }
+
+        [Route("/authors/{authorId:int}")]
+        [HttpPut]
+        public IActionResult updateAuthorById([FromBody] AuthorInputModels author, int id)
+        {
+            _authorService.UpdateAuthorById(author, id);
+            return NoContent();
+        }
+        [Route("/authors/{authorId:int}")]
+        [HttpDelete]
+        public IActionResult deleteAuthorById(int authorId)
+        {
+            _authorService.DeleteAuthorById(authorId);
+            return NoContent();
+        }
+
+        [Route("/authors/{authorId:int}/newsItems/{newsItemId:int}")]
+        [HttpPost]
+        public IActionResult createNewAuthorNewsItemLink(int authorId, int newsItemId)
+        {
+            _authorService.createNewAuthorNewsItemLink(authorId, newsItemId);
+            return NoContent();
         }
     }
 }

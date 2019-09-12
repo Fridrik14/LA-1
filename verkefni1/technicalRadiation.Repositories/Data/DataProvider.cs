@@ -92,6 +92,11 @@ namespace techincalRadiation.Repositories.Data
             {
                 AuthorId = 1,
                 NewsItemId = 1
+            },
+            new NewsItemAuthors
+            {
+                AuthorId = 2,
+                NewsItemId = 2
             }
         };
         // NIC => News Item Categories
