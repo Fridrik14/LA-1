@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using techincalRadiation.Models.Dtos;
+using techincalRadiation.Models.InputModels;
 using technicalRadiation.Service;
 using TechnicalRadiation.Models;
 
@@ -29,7 +30,7 @@ namespace technicalRadiation.WebApi.Controllers
         }
 
         // http/{s}://localhost:5000/{1}/api/1
-        [Route("/{newsitemid:int}")]
+        [Route("/{newsitemid:int}", Name="getNewsItemById")]
         [HttpGet]
         public IActionResult getNewsItemById(int newsItemId)
         {
@@ -39,26 +40,31 @@ namespace technicalRadiation.WebApi.Controllers
         // http/{s}://localhost:5000/{1}/api/1
         [Route("{newsitemid:int}")]
         [HttpPut]
-        public IActionResult updateNewsItemById(int newsItemId)
+        public IActionResult UpdateNewsItemById([FromBody] NewsItemInputModel newsItem, int newsItemId)
         {
-            return Ok();
+            _newsItemService.UpdateNewsItemById(newsItem,newsItemId);
+            return NoContent();
         }
 
-        // http/{s}://localhost:5000/{1}/api/1
-        // Required?
-        [Route("{newsitemid:int}")]
-        [HttpPatch]
-        public IActionResult updateNewsItemPartiallyById(int newsItemId)
+        [Route("")]
+        [HttpPost]
+        public IActionResult CreateNewNewsItem([FromBody] NewsItemInputModel body)
         {
-            return Ok();
+            if (!ModelState.IsValid) { return BadRequest("Model is not properly formatted."); }
+            var entity = _newsItemService.CreateNewNewsItem(body);
+            return CreatedAtRoute("getNewsItemById", new { id = entity.Id }, null);
         }
+        
 
         // http/{s}://localhost:5000/{1}/api/1
         [Route("{newsitemid:int}")]
         [HttpDelete]
-        public IActionResult deleteNewsItemById(int newsItemId)
+        public IActionResult DeleteNewsItemById(int newsItemId)
         {
-            return Ok();
+            _newsItemService.DeleteNewsItemById(newsItemId);
+            _newsItemService.DeleteNewsItemAuthorConnection(newsItemId);
+            _newsItemService.DeleteNewsItemCategoriesConnection(newsItemId);
+            return NoContent();
         }
 
         [Route("/categories")]
