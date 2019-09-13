@@ -15,8 +15,9 @@ namespace technicalRadiation.WebApi.Controllers
     public class MySampleActionFiler : IActionFilter
     {
         private string lykilord = "lykilord123";
-        public bool OnActionExecuting([FromHeader] string password)
+        public override bool OnActionExecuting(ActionExecuting context)
         {
+            var result = (actionContext.Request.Content as ObjectContent).Value.ToString();
             if(password == lykilord){
                 return true;
             }
