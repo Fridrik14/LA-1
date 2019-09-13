@@ -102,28 +102,28 @@ namespace technicalRadiation.Repositories
         {
             var result = DataProvider.Authors.FirstOrDefault(r => r.Id == id);
             //TODO throw exception
-            if(result == null)
+            if(result != null)
             {
-                return null;
+                //Remove Author from Authors list
+                DataProvider.Authors.Remove(result);
+                //Remove Athor->NewsItem link from NIA
+                DataProvider.NIA.RemoveAll(s => s.AuthorId == id);
             }
-            //Remove Author from Authors list
-            DataProvider.Authors.Remove(result);
-            //Remove Athor->NewsItem link from NIA
-            DataProvider.NIA.RemoveAll(s => s.AuthorId == id);
+            
         }
 
-        public NIA CreateNewAuthorNewsItemLink(int authorId, int newsItemId)
+        public NewsItemAuthors CreateNewAuthorNewsItemLink(int authorId, int newsItemId)
         {
-            var entity =  new NIA
+            var entity =  new NewsItemAuthors
             {
                 AuthorId = authorId,
                 NewsItemId = newsItemId
             };
             DataProvider.NIA.Add(entity);
-            return new NIA 
+            return new NewsItemAuthors
             {
                 AuthorId = entity.AuthorId,
-                NewsItemId = entity.NewsItemId;
+                NewsItemId = entity.NewsItemId
             };
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using techincalRadiation.Models.Dtos;
-using technicalRadiation.models.InputModels;
+using techincalRadiation.Models.Entities;
+using technicalRadiation.Models;
 using technicalRadiation.Repositories;
 
 
@@ -19,13 +20,13 @@ namespace technicalRadiation.Service
         {
             return _authorRepository.getAuthorById(id);
         }
-        public NewsItemDto getNewsItemsByAuthorId(int id)
+        public IEnumerable<NewsItemDto> getNewsItemsByAuthorId(int id)
         {
             return _authorRepository.getNewsItemsByAuthorId(id);
         }
         public void UpdateAuthorById(AuthorInputModel author, int id)
         {
-            return _authorRepository.UpdateAuthorById(author, id);
+            _authorRepository.UpdateAuthorById(author, id);
         }
 
         public AuthorDetailDto createNewAuthor(AuthorInputModel author)
@@ -34,10 +35,10 @@ namespace technicalRadiation.Service
         }
         public void DeleteAuthorById(int id)
         {
-            return _authorRepository.DeleteAuthorById(id);
+            _authorRepository.DeleteAuthorById(id);
         }
 
-        public NIA createNewAuthorNewsItemLink(int authorId, int newsItemId)
+        public NewsItemAuthors createNewAuthorNewsItemLink(int authorId, int newsItemId)
         {
             return _authorRepository.CreateNewAuthorNewsItemLink(authorId, newsItemId);
         }

@@ -124,7 +124,7 @@ namespace technicalRadiation.WebApi.Controllers
 
         [Route("/authors")]
         [HttpPost]
-        public IActionResult createNewAuthor([FromBody] AuthorInputModels author)
+        public IActionResult createNewAuthor([FromBody] AuthorInputModel author)
         {
             if (!ModelState.IsValid)
             { 
@@ -136,7 +136,7 @@ namespace technicalRadiation.WebApi.Controllers
 
         [Route("/authors/{authorId:int}")]
         [HttpPut]
-        public IActionResult updateAuthorById([FromBody] AuthorInputModels author, int id)
+        public IActionResult updateAuthorById([FromBody] AuthorInputModel author, int id)
         {
             _authorService.UpdateAuthorById(author, id);
             return NoContent();
