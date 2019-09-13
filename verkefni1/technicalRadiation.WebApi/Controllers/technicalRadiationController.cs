@@ -7,6 +7,7 @@ using techincalRadiation.Models.Dtos;
 using techincalRadiation.Models.InputModels;
 using technicalRadiation.Service;
 using TechnicalRadiation.Models;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace technicalRadiation.WebApi.Controllers
 {
@@ -14,9 +15,20 @@ namespace technicalRadiation.WebApi.Controllers
     [ApiController]
     public class TRController : ControllerBase
     {
+        private string lykilord = "lykilord123";
         private NewsItemService _newsItemService = new NewsItemService();
         private CategoryService _categoryService = new CategoryService();
         private AuthorService _authorService = new AuthorService();
+
+        public bool OnActionExecuting(ActionExecutionContext context, [FromHeader] string password)
+        {
+            if(password == lykilord){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
 
         // [FromQuery] type name
         // http/{s}://localhost:5000/{1}/api
@@ -52,10 +64,16 @@ namespace technicalRadiation.WebApi.Controllers
         // http/{s}://localhost:5000/{1}/api/1
         [Route("{newsitemid:int}")]
         [HttpPut]
-        public IActionResult UpdateNewsItemById([FromBody] NewsItemInputModel newsItem, int newsItemId)
+        public IActionResult UpdateNewsItemById([FromBody] NewsItemInputModel newsItem, int newsItemId, [FromHeader] string password)
         {
-            _newsItemService.UpdateNewsItemById(newsItem,newsItemId);
-            return NoContent();
+            if(OnActionExecuting(password))
+            {
+                _newsItemService.UpdateNewsItemById(newsItem,newsItemId);
+                return NoContent();
+            }
+            else{
+                throw new HttpResponseException(HttpStatusCode.Unauthorized);
+            }
         }
 
         [Route("")]
