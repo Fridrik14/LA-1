@@ -38,30 +38,26 @@ namespace technicalRadiation.Repositories
             };
         }
 
-        // fix
-        public NewsItemDto getNewsItemsByAuthorId(int authorId)
+        
+        public IEnumerable<NewsItemDto> getNewsItemsByAuthorId(int authorId)
         {
             var result = DataProvider.NIA.FindAll(r => r.AuthorId == authorId);
+            var newsItems = DataProvider.NewsItems.Where(a => result.Any(x => x.NewsItemId == a.Id));
+            
+            
             //TODO Throw exception
             if (result == null)
             {
                 return null;
             }
-            
-            //Populate newsItemsId's of author
-            foreach (var item in result)
-            {
-                var newsItem = DataProvider.NewsItems.FirstOrDefault(p => p.Id == item.NewsItemId);
-                return new NewsItemDto
-                {
-                    Id = newsItem.Id,
-                    Title = newsItem.Title,
-                    ImgSource = newsItem.ImgSource,
-                    ShortDescription = newsItem.ShortDescription
-                };
 
-            }
-            //Return newsItemDto's of all newsItems of author
+            return newsItems.Select(r => new NewsItemDto
+            {
+                Id = r.Id,
+                Title = r.Title,
+                ImgSource = r.ImgSource,
+                ShortDescription = r.ShortDescription
+            });
             
         }
 
@@ -69,19 +65,19 @@ namespace technicalRadiation.Repositories
         {
             var result = DataProvider.Authors.FirstOrDefault(r => r.Id == id);
             //TODO throw exception
-            if (result == null)
+            if (result != null)
             {
-                return null;
+                result.Name = author.Name;
+                result.ProfileImgSource = author.ProfileImgSource;
+                result.Bio = author.Bio;
+                result.DateModified = DateTime.Now;
             }
-            result.Name = author.Name;
-            result.ProfileImgSource = author.ProfileImgSource;
-            result.Bio = author.Bio;
-            result.DateModified = DateTime.Now;
+            
         }
 
         public AuthorDetailDto CreateNewAuthor(AuthorInputModel author)
         {
-            int nextId = DataProvider.Authors.OrderByDescending(r => r.Id).FirstOrDefault() + 1;
+            int nextId = DataProvider.Authors.OrderByDescending(r => r.Id).FirstOrDefault().Id + 1;
             var entity = new Author
             {
                 Id = nextId,
