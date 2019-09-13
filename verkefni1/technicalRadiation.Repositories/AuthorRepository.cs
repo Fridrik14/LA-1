@@ -42,6 +42,7 @@ namespace technicalRadiation.Repositories
         public IEnumerable<NewsItemDto> getNewsItemsByAuthorId(int authorId)
         {
             var result = DataProvider.NIA.FindAll(r => r.AuthorId == authorId);
+            
             var newsItems = DataProvider.NewsItems.Where(a => result.Any(x => x.NewsItemId == a.Id));
             
             

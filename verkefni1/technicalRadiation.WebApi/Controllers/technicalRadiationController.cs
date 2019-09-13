@@ -77,26 +77,43 @@ namespace technicalRadiation.WebApi.Controllers
             return Ok(envelope);
         }
 
-        [Route("/categories/{categoryId:int}")]
+        [Route("/categories/{categoryId:int}", Name="getCategoryById")]
         [HttpGet]
         public IActionResult getCategoryById(int categoryId)
         {
             return Ok(_categoryService.getCategoryById(categoryId));
         }
 
+        [Route("/categories/{categoryId:int}")]
+        [HttpPost]
+        public IActionResult CreateNewCategory([FromBody] CategoryInputModel category)
+        {
+            var newcategory = _categoryService.CreateNewCategory(category);
+            return CreatedAtRoute("getCategoryById", new { id = newcategory.Id }, null);
+        }
+
+        [Route("/api/categories/{categoryId}/newsItems/{newsItemId}")]
+        [HttpPost]
+        public IActionResult CreateNewAuthorNewsItemLink(int categoryId, int newsItemId)
+        {
+            var entity = _categoryService.CreateNewAuthorNewsItemLink(categoryId,newsItemId);
+            return NoContent();
+        }
 
         [Route("/categories/{categoryId:int}")]
         [HttpPut]
-        public IActionResult updateCategoryById(int categoryId)
+        public IActionResult UpdateCategoryById([FromBody] CategoryInputModel category , int categoryId)
         {
-            return Ok();
+            _categoryService.UpdateCategoryById(category,categoryId);
+            return NoContent();
         }
 
         [Route("/categories/{categoryId:int}")]
         [HttpDelete]
         public IActionResult deleteCategoryById(int categoryId)
         {
-            return Ok();
+            _categoryService.DeleteCategoryById(categoryId);
+            return NoContent();
         }
 
         [Route("/authors")]
@@ -108,7 +125,7 @@ namespace technicalRadiation.WebApi.Controllers
             return Ok(authors);
         }
 
-        [Route("/authors/{authorId:int}")]
+        [Route("/authors/{authorId:int}", Name="getAuthorById")]
         [HttpGet]
         public IActionResult getAuthorById(int authorId)
         {
