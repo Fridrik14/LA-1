@@ -11,16 +11,11 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace technicalRadiation.WebApi.Controllers
 {
-    [Route("api/")]
-    [ApiController]
-    public class TRController : ControllerBase
+
+    public class MySampleActionFiler : IActionFilter
     {
         private string lykilord = "lykilord123";
-        private NewsItemService _newsItemService = new NewsItemService();
-        private CategoryService _categoryService = new CategoryService();
-        private AuthorService _authorService = new AuthorService();
-
-        public bool OnActionExecuting(ActionExecutionContext context, [FromHeader] string password)
+        public bool OnActionExecuting([FromHeader] string password)
         {
             if(password == lykilord){
                 return true;
@@ -29,6 +24,14 @@ namespace technicalRadiation.WebApi.Controllers
                 return false;
             }
         }
+    }
+    [Route("api/")]
+    [ApiController]
+    public class TRController : ControllerBase
+    {
+        private NewsItemService _newsItemService = new NewsItemService();
+        private CategoryService _categoryService = new CategoryService();
+        private AuthorService _authorService = new AuthorService();
 
         // [FromQuery] type name
         // http/{s}://localhost:5000/{1}/api
@@ -66,7 +69,7 @@ namespace technicalRadiation.WebApi.Controllers
         [HttpPut]
         public IActionResult UpdateNewsItemById([FromBody] NewsItemInputModel newsItem, int newsItemId, [FromHeader] string password)
         {
-            if(OnActionExecuting(password))
+            if(MySampleActionFilter.OnActionExecuting(password))
             {
                 _newsItemService.UpdateNewsItemById(newsItem,newsItemId);
                 return NoContent();
