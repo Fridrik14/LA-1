@@ -25,7 +25,19 @@ namespace technicalRadiation.WebApi.Controllers
         public IActionResult getAllNewsItems([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 25)
         {
             var newsItems = _newsItemService.getAllNewsItems();
+            // newsItems.ForEach(r => {
+            //     r.Links.AddReference("self", $"/api/{r.Id}");
+            //     r.Links.AddReference("edit", $"/api/{r.Id}");
+            //     r.Links.AddReference("delete", $"/api/{r.Id}");
+            //     int authorId = _newsItemService.getAuthorIdOfNewsItem(r.Id);
+            //     if (authorId != -1)
+            //     {
+            //         r.Links.AddReference("Author", $"/api/authors/{authorId}");
+            //     }                
+            //     r.Links.AddListReference("Categories", _newsItemService.s(r.Id).Select(o => new { href = $"/api/category/{r.Id}/owners/{o.Id}" }));
+            // });
             var envelope = new Envelope<NewsItemDto>(pageSize, pageNumber, newsItems);
+
             return Ok(envelope);
         }
 
@@ -73,6 +85,15 @@ namespace technicalRadiation.WebApi.Controllers
         public IActionResult getAllCategories([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 25)
         {   
             var categories = _categoryService.getAllCategories();
+            // foreach (var category in categories)
+            // {
+            //     category.Links.AddReference("self", $"/api/category/{r.Id}");
+            //     category.Links.AddReference("edit", $"/api/category/{r.Id}");
+            //     category.Links.AddReference("delete", $"/api/category/{r.Id}");
+            // }
+            // categories.ForEach(r => {
+                
+            // });
             var envelope = new Envelope<CategoryDto>(pageSize, pageNumber, categories);
             return Ok(envelope);
         }
@@ -81,6 +102,7 @@ namespace technicalRadiation.WebApi.Controllers
         [HttpGet]
         public IActionResult getCategoryById(int categoryId)
         {
+            
             return Ok(_categoryService.getCategoryById(categoryId));
         }
 

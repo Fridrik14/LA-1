@@ -43,5 +43,14 @@ namespace technicalRadiation.Service
             _newsItemRepository.DeleteNewsItemCategoriesConnection(newsItemId);
         }
         
+        public int getAuthorIdOfNewsItem(int newsItemId)
+        {
+            return _newsItemRepository.getAuthorIdOfNewsItem(newsItemId);
+        }
+
+        public IEnumerable<CategoryDto> getNewsItemcategories(int newsItemId)
+        {
+            return _newsItemRepository.getNewsItemcategories(newsItemId);
+        }
     }
 }

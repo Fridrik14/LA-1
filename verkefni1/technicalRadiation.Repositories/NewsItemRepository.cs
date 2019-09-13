@@ -98,5 +98,18 @@ namespace technicalRadiation.Repositories
             // Find all connections and delete 
             DataProvider.NIC.RemoveAll(r=> r.NewsItemId == newsItemId);
         }
+
+        public int getAuthorIdOfNewsItem(int newsItemId)
+        {
+            var newsItemAuthorConnection =  DataProvider.NIA.FirstOrDefault(r => r.NewsItemId == newsItemId);
+            if (newsItemAuthorConnection == null){return -1;}
+            else{return newsItemAuthorConnection.AuthorId;}
+        }
+
+        public IEnumerable<CategoryDto> getNewsItemcategories(int newsItemId)
+        {
+            var categoryConnection = DataProvider.NIC.Select(r => r.NewsItemId == newsItemId);
+            
+        }
     }
 }
