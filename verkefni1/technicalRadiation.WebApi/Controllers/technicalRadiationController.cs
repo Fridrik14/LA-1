@@ -17,7 +17,7 @@ namespace technicalRadiation.WebApi.Controllers
         private string lykilord = "lykilord123";
         public override bool OnActionExecuting(ActionExecuting context)
         {
-            var result = (actionContext.Request.Content as ObjectContent).Value.ToString();
+            var result = (context.Request.Content as ObjectContent).Value.ToString();
             if(password == lykilord){
                 return true;
             }
