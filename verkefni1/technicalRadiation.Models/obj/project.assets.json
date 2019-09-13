@@ -274,7 +274,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
-      "System.ComponentModel.Annotations"
+      "System.ComponentModel.Annotations >= 4.5.0"
     ]
   },
   "packageFolders": {
@@ -284,11 +284,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj",
+      "projectUniqueName": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj",
       "projectName": "technicalRadiation.Models",
-      "projectPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj",
+      "projectPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj",
       "packagesPath": "C:\\Users\\olafur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\verkefni1\\technicalRadiation.Models\\obj\\",
+      "outputPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -324,7 +324,7 @@
           },
           "System.ComponentModel.Annotations": {
             "target": "Package",
-            "version": "(, )"
+            "version": "[4.5.0, )"
           }
         },
         "imports": [

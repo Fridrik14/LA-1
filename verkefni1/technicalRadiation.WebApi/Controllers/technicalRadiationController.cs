@@ -7,25 +7,26 @@ using techincalRadiation.Models.Dtos;
 using techincalRadiation.Models.InputModels;
 using technicalRadiation.Service;
 using TechnicalRadiation.Models;
+// using techincalRadiation.Models.Extensions;
 using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace technicalRadiation.WebApi.Controllers
 {
-
-    public class MySampleActionFiler : IActionFilter
-    {
-        private string lykilord = "lykilord123";
-        public override bool OnActionExecuting(ActionExecuting context)
-        {
-            var result = (context.Request.Content as ObjectContent).Value.ToString();
-            if(password == lykilord){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-    }
+    // CHECK THIS
+    // public class MySampleActionFiler : IActionFilter
+    // {
+    //     private string lykilord = "lykilord123";
+    //     public override bool OnActionExecuting(ActionExecuting context)
+    //     {
+    //         var result = (context.Request.Content as ObjectContent).Value.ToString();
+    //         if(password == lykilord){
+    //             return true;
+    //         }
+    //         else{
+    //             return false;
+    //         }
+    //     }
+    // }
     [Route("api/")]
     [ApiController]
     public class TRController : ControllerBase
@@ -53,7 +54,7 @@ namespace technicalRadiation.WebApi.Controllers
             //     r.Links.AddListReference("Categories", _newsItemService.s(r.Id).Select(o => new { href = $"/api/category/{r.Id}/owners/{o.Id}" }));
             // });
             var envelope = new Envelope<NewsItemDto>(pageSize, pageNumber, newsItems);
-
+            
             return Ok(envelope);
         }
 
@@ -70,14 +71,14 @@ namespace technicalRadiation.WebApi.Controllers
         [HttpPut]
         public IActionResult UpdateNewsItemById([FromBody] NewsItemInputModel newsItem, int newsItemId, [FromHeader] string password)
         {
-            if(MySampleActionFilter.OnActionExecuting(password))
-            {
+            // if(MySampleActionFilter.OnActionExecuting(password))
+            // {
                 _newsItemService.UpdateNewsItemById(newsItem,newsItemId);
                 return NoContent();
-            }
-            else{
-                throw new HttpResponseException(HttpStatusCode.Unauthorized);
-            }
+            // }
+            // else{
+            //     throw new HttpResponseException(HttpStatusCode.Unauthorized);
+            // }
         }
 
         [Route("")]

@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\technicalRadiation.Repositories\technicalRadiation.Repositories.csproj" />
+    <!-- <ProjectReference Include="..\technicalRadiation.Repositories\technicalRadiation.Repositories.csproj" /> -->
   </ItemGroup>
 
 </Project>

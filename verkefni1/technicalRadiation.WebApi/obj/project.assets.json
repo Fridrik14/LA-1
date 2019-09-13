@@ -4438,6 +4438,46 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "technicalRadiation.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.5.0"
+        },
+        "compile": {
+          "bin/placeholder/technicalRadiation.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/technicalRadiation.Models.dll": {}
+        }
+      },
+      "technicalRadiation.Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "technicalRadiation.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/technicalRadiation.Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/technicalRadiation.Repositories.dll": {}
+        }
+      },
+      "technicalRadiation.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "technicalRadiation.Models": "1.0.0",
+          "technicalRadiation.Repositories": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/technicalRadiation.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/technicalRadiation.Services.dll": {}
+        }
       }
     }
   },
@@ -12063,13 +12103,31 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "technicalRadiation.Models/1.0.0": {
+      "type": "project",
+      "path": "../technicalRadiation.Models/technicalRadiation.Models.csproj",
+      "msbuildProject": "../technicalRadiation.Models/technicalRadiation.Models.csproj"
+    },
+    "technicalRadiation.Repositories/1.0.0": {
+      "type": "project",
+      "path": "../technicalRadiation.Repositories/technicalRadiation.Repositories.csproj",
+      "msbuildProject": "../technicalRadiation.Repositories/technicalRadiation.Repositories.csproj"
+    },
+    "technicalRadiation.Services/1.0.0": {
+      "type": "project",
+      "path": "../technicalRadiation.Services/technicalRadiation.Services.csproj",
+      "msbuildProject": "../technicalRadiation.Services/technicalRadiation.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
-      "Microsoft.NETCore.App >= 2.2.0"
+      "Microsoft.NETCore.App >= 2.2.0",
+      "technicalRadiation.Models >= 1.0.0",
+      "technicalRadiation.Repositories >= 1.0.0",
+      "technicalRadiation.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12079,11 +12137,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\verkefni1\\technicalRadiation.WebApi\\technicalRadiation.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.WebApi\\technicalRadiation.WebApi.csproj",
       "projectName": "technicalRadiation.WebApi",
-      "projectPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\verkefni1\\technicalRadiation.WebApi\\technicalRadiation.WebApi.csproj",
+      "projectPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.WebApi\\technicalRadiation.WebApi.csproj",
       "packagesPath": "C:\\Users\\olafur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\verkefni1\\technicalRadiation.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12099,7 +12157,17 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj": {
+              "projectPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj"
+            },
+            "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Repositories\\technicalRadiation.Repositories.csproj": {
+              "projectPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Repositories\\technicalRadiation.Repositories.csproj"
+            },
+            "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Services\\technicalRadiation.Services.csproj": {
+              "projectPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Services\\technicalRadiation.Services.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

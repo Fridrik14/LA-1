@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj": {}
+    "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj": {
+    "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj",
+        "projectUniqueName": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj",
         "projectName": "technicalRadiation.Models",
-        "projectPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj",
+        "projectPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Models\\technicalRadiation.Models.csproj",
         "packagesPath": "C:\\Users\\olafur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\verkefni1\\technicalRadiation.Models\\obj\\",
+        "outputPath": "C:\\Users\\olafur\\Desktop\\hr\\3.onn\\vefþjonustur\\large_verkefni\\LA-1\\LA-1\\verkefni1\\technicalRadiation.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -47,7 +47,7 @@
             },
             "System.ComponentModel.Annotations": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[4.5.0, )"
             }
           },
           "imports": [

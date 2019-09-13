@@ -1,0 +1,9 @@
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\LA-1\LA-1\verkefni1\technicalRadiation.Models\bin\Debug\netstandard2.0\technicalRadiation.Models.deps.json
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\LA-1\LA-1\verkefni1\technicalRadiation.Models\bin\Debug\netstandard2.0\technicalRadiation.Models.dll
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\LA-1\LA-1\verkefni1\technicalRadiation.Models\bin\Debug\netstandard2.0\technicalRadiation.Models.pdb
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\LA-1\LA-1\verkefni1\technicalRadiation.Models\obj\Debug\netstandard2.0\technicalRadiation.Models.csprojAssemblyReference.cache
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\LA-1\LA-1\verkefni1\technicalRadiation.Models\obj\Debug\netstandard2.0\technicalRadiation.Models.csproj.CoreCompileInputs.cache
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\LA-1\LA-1\verkefni1\technicalRadiation.Models\obj\Debug\netstandard2.0\technicalRadiation.Models.AssemblyInfoInputs.cache
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\LA-1\LA-1\verkefni1\technicalRadiation.Models\obj\Debug\netstandard2.0\technicalRadiation.Models.AssemblyInfo.cs
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\LA-1\LA-1\verkefni1\technicalRadiation.Models\obj\Debug\netstandard2.0\technicalRadiation.Models.dll
+C:\Users\olafur\Desktop\hr\3.onn\vefþjonustur\large_verkefni\LA-1\LA-1\verkefni1\technicalRadiation.Models\obj\Debug\netstandard2.0\technicalRadiation.Models.pdb

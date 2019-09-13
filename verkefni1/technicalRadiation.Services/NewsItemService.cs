@@ -14,7 +14,7 @@ namespace technicalRadiation.Service
             return _newsItemRepository.GetAllNewsItems();
         }
 
-        public NewsItemDto getNewsItemById(int id)
+        public NewsItemDetailDto getNewsItemById(int id)
         {
             return _newsItemRepository.GetNewsItemById(id);
         }
@@ -48,9 +48,9 @@ namespace technicalRadiation.Service
             return _newsItemRepository.getAuthorIdOfNewsItem(newsItemId);
         }
 
-        public IEnumerable<CategoryDto> getNewsItemcategories(int newsItemId)
-        {
-            return _newsItemRepository.getNewsItemcategories(newsItemId);
-        }
+        // public IEnumerable<CategoryDto> getNewsItemcategories(int newsItemId)
+        // {
+        //     return _newsItemRepository.getNewsItemcategories(newsItemId);
+        // }
     }
 }

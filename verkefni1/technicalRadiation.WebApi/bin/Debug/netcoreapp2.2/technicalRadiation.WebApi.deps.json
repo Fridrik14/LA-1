@@ -26,13 +26,50 @@
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
-          "Microsoft.NETCore.App": "2.2.0"
+          "Microsoft.NETCore.App": "2.2.0",
+          "technicalRadiation.Models": "1.0.0",
+          "technicalRadiation.Repositories": "1.0.0",
+          "technicalRadiation.Services": "1.0.0"
         },
         "runtime": {
           "technicalRadiation.WebApi.dll": {}
         },
         "compile": {
           "technicalRadiation.WebApi.dll": {}
+        }
+      },
+      "technicalRadiation.Models/1.0.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.5.0"
+        },
+        "runtime": {
+          "technicalRadiation.Models.dll": {}
+        },
+        "compile": {
+          "technicalRadiation.Models.dll": {}
+        }
+      },
+      "technicalRadiation.Repositories/1.0.0": {
+        "dependencies": {
+          "technicalRadiation.Models": "1.0.0"
+        },
+        "runtime": {
+          "technicalRadiation.Repositories.dll": {}
+        },
+        "compile": {
+          "technicalRadiation.Repositories.dll": {}
+        }
+      },
+      "technicalRadiation.Services/1.0.0": {
+        "dependencies": {
+          "technicalRadiation.Models": "1.0.0",
+          "technicalRadiation.Repositories": "1.0.0"
+        },
+        "runtime": {
+          "technicalRadiation.Services.dll": {}
+        },
+        "compile": {
+          "technicalRadiation.Services.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3233,6 +3270,21 @@
   },
   "libraries": {
     "technicalRadiation.WebApi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "technicalRadiation.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "technicalRadiation.Repositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "technicalRadiation.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
